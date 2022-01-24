@@ -4,21 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <link href="style.css" rel="stylesheet"/>
+    <title>Home</title>
   </head>
+
   <body>
-    <form>
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" />
-      <label for="pass_word">Password</label>
-      <input type="password" id="pass_word" name="pass_word" />
-      <button type="submit">Submit</button>
-    </form>
-</br></br>
-    <table>
+    
+    </br>
+    <nav id="navbar">
+      <nav__links id="nav__links">
+        <a class="nav__link" href="/home.html">Home</a>
+        <a class="nav__link" href="/submission.html">New Book</a>
+        <a class="nav__link" href="/manager.html">Manager</a>
+      </nav__links>
+      <button id="signout">Sign Out</button>
+    </nav>
+    </br>
+    <table id="book_table">
         <thead align="center">Books</thead>
         <tbody>
       <tr>
+        <th></th>
         <th>Title</th>
         <th>Author</th>
         <th>Year</th>
@@ -27,6 +33,7 @@
         <th>Quantity</th>
       </tr>
       <tr align="center">
+        <td><img src="lord_jim.png" alt="Lord Jim book picture" width='50px'></td>
         <td>Lord Jim</td>
         <td>Joseph Conrad</td>
         <td>1900</td>
@@ -35,6 +42,7 @@
         <td>2</td>
       </tr>
       <tr align="center">
+        <td><img src="lolita.png" alt="Lord Jim book picture" width='50px'></td>
         <td>Lolita</td>
         <td>Vladimir Nabokov</td>
         <td>1955</td>
@@ -44,5 +52,8 @@
       </tr>
       </tbody>
     </table>
+  </br>
+<button><a href='/index.html'>Temp Login</a></button>
+
   </body>
 </html>

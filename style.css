@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+}
+
+nav {
+  background-color: tan;
+  padding: 10px;
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 12fr 1fr;
+}
+
+#nav__links {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 18fr;
+}
+
+nav button {
+  /* float: right; */
+}
+
+table,
+th,
+tr,
+td {
+  border: solid;
+}
