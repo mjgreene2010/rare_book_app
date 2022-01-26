@@ -19,13 +19,14 @@ nav {
   grid-template-columns: 1fr 1fr 1fr 18fr;
 }
 
-nav button {
-  /* float: right; */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 
 table,
 th,
 tr,
 td {
-  border: solid;
+  border: 1px black solid;
+  border-collapse: collapse;
 }
