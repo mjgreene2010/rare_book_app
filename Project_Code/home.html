@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.css" rel="stylesheet"/>
+    <link href="./styles/style.css" rel="stylesheet"/>
     <script defer src="script.js "></script>
     <title>Home</title>
   </head>
@@ -12,18 +12,23 @@
   <body>
     
     </br>
-    <nav id="navbar">
-      <nav__links id="nav__links">
+    <nav class="navbar">
+      <!-- <nav__links class="nav__links"> -->
         <a class="nav__link" href="/home.html">Home</a>
         <a class="nav__link" href="/submission.html">New Book</a>
         <a class="nav__link" href="/manager.html">Manager</a>
-      </nav__links>
+      <!-- </nav__links> -->
       <button id="signout">Sign Out</button>
     </nav>
     </br>
     <table id="book_table">
-        <thead align="center">Books</thead>
-        <tbody>
+      <thead>
+        <tr>
+          <th>Books</th>
+        
+        </tr>
+      </thead>
+      <tbody>
       <tr>
         <th></th>
         <th>Title</th>
@@ -34,7 +39,7 @@
         <th>Quantity</th>
       </tr>
       <tr align="center">
-        <td><img src="lord_jim.png" alt="Lord Jim book picture" width='50px'></td>
+        <td><img src="./images/lord_jim.png" alt="Lord Jim book picture" width='50px'></td>
         <td>Lord Jim</td>
         <td>Joseph Conrad</td>
         <td>1900</td>
@@ -43,7 +48,7 @@
         <td>2</td>
       </tr>
       <tr align="center">
-        <td><img src="lolita.png" alt="Lord Jim book picture" width='50px'></td>
+        <td><img src="./images/lolita.png" alt="Lord Jim book picture" width='50px'></td>
         <td>Lolita</td>
         <td>Vladimir Nabokov</td>
         <td>1955</td>
