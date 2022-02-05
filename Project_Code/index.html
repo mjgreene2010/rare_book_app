@@ -12,13 +12,17 @@
   <body>
     <button><a href='/home.html'>Temp Home</a></button>
   </br>
-  <div id="container">
+  <div id="login-container">
     <form  id="login-form" >
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" />
+      <div id="login-username">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" />
+      </div>
     </br></br>
-      <label for="pass_word">Password:</label>
-      <input type="password" id="pass_word" name="pass_word" />
+      <div id="login-password">
+        <label for="pass_word">Password:</label>
+        <input type="password" id="pass_word" name="pass_word"/>
+      </div>
     </br></br>
       <button id="submit-login" type="submit">Login</button>
     </form>

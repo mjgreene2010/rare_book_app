@@ -5,10 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/styles/style.css" rel="stylesheet"/>
-    <title>Submit Book</title>
+
+    <title> Submit Book</title>
   </head>
   <body>
-
+    <div id="currentUserName"> 
+      <span>Michael</span>
+      <span id="autoLogoutTime">15 seconds remaining</span>
+    </div>
 </br>
 <nav class="navbar">
   <div class="nav__links">
@@ -18,8 +22,9 @@
   </div>
   <button id="signout">Sign Out</button>
 </nav>
-</br>
-    <form>
+
+  <div id="submission__container">
+    <form id="submission__form">
       <span>
         <label for="picture">Photo:</label>
         <input type="file" id="picture" name="picture"/>
@@ -59,5 +64,6 @@
         <label></label><button type="submit">Submit</button></>
       </span>
     </form>
+  </div>
   </body>
 </html>

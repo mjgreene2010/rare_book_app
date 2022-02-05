@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/styles/style.css" rel="stylesheet"/>
-    <title>Login</title>
+    <title>Manager</title>
   </head>
   <body>
+    <div id="currentUserName"> 
+      <span>Michael</span>
+      <span id="autoLogoutTime">15 seconds remaining</span>
+    </div>
     </br>
     <nav class="navbar">
       <div class="nav__links">
@@ -18,11 +22,16 @@
       <button id="signout">Sign Out</button>
     </nav>
     </br> 
-    </br>
-    <table>
-        <thead align="center">Books</thead>
+  
+    <table id="book__table">
+      <caption >
+        <span id="books_title">Books:</span>
+        <input id="book-search" placeholder="search"/>
+      </caption>
+
         <tbody>
       <tr>
+        <th></th>
         <th>Title</th>
         <th>Author</th>
         <th>Year</th>
@@ -35,7 +44,8 @@
         <th></th>
         <th></th>
       </tr>
-      <tr align="center">
+      <tr>
+        <td><img class="book__img" src="./images/lord_jim.png" alt="Lord Jim book picture"></td>
         <td>Lord Jim</td>
         <td>Joseph Conrad</td>
         <td>1900</td>
@@ -48,7 +58,8 @@
         <td><button>Approve</button></td>
         <td><button>Deny</button></td>
       </tr>
-      <tr align="center">
+      <tr>
+        <td><img class="book__img" src="./images/lolita.png" alt="Lord Jim book picture"></td>
         <td>Lolita</td>
         <td>Vladimir Nabokov</td>
         <td>1955</td>

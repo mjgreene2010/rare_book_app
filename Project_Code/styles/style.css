@@ -1,7 +1,7 @@
 /* SELECTOR: All */
 
 * {
-  margin: 0 20px 0 20px;
+  margin: 10px 20px 0 20px;
   padding: 0;
 }
 
@@ -24,22 +24,23 @@ body {
   text-align: center;
 }
 
-#container {
-  display: grid;
-  place-items: center;
+#login-container,
+#submission__container {
+  display: flex;
+  justify-content: center;
 }
 
-#login-form {
-  /* display: grid; */
-  border: 1px solid black;
+#login-form,
+#submission__form {
   background-color: blanchedalmond;
   text-align: center;
-  margin: 10% 25% 25% 10%;
-
-  padding: 50px;
+  padding: 40px;
   border-radius: 10px;
-  max-width: 250px;
-  max-height: 250px;
+}
+
+#login-username,
+#login-password {
+  display: inline-flex;
 }
 
 /* SELECTORS: by Tag */
@@ -59,21 +60,13 @@ a:active {
 
 form button {
   padding: 5px;
+  border-radius: 2px;
 }
 
 form input {
-  display: inline-block;
-  text-align: right;
-  size: 50px;
   border: none;
-  background-color: rgb(209, 169, 117);
   border-bottom: 1px solid rgb(150, 70, 0);
-}
-
-form label {
-  display: inline-block;
-  width: 150px;
-  text-align: right;
+  background-color: rgb(209, 169, 117);
 }
 
 form #picture {
@@ -88,14 +81,15 @@ form input:focus {
 nav {
   background-color: rgb(209, 169, 117);
   margin-bottom: 25px;
-  padding: 10px;
+  padding: 5px;
   display: flex;
+
   border-radius: 5px;
 }
 
 nav .nav__links {
-  display: flex;
-  padding: 3px;
+  /* display: flex; */
+  /* padding: 3px; */
   flex: 1;
 }
 
@@ -110,9 +104,17 @@ table {
 table caption {
   background-color: rgb(209, 169, 117);
   border-radius: 5px;
-  column-span: all;
   font-size: xx-large;
   font-weight: bold;
+}
+
+table caption #books_title {
+  float: left;
+}
+
+table caption #book-search {
+  float: right;
+  caption-side: bottom;
 }
 
 table,
@@ -124,5 +126,5 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: rgb(238, 237, 236);
 }

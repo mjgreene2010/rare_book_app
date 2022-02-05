@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <div id="currentUserName"> 
+      <span>Michael</span>
+      <span id="autoLogoutTime">15 seconds remaining</span>
+    </div>
     
     </br>
     <nav class="navbar">
@@ -22,11 +26,10 @@
     </nav>
     </br>
     <table id="book__table">
-      <caption>
-        
-        <span>Books:</span>
-        
-        </caption>
+      <caption >
+        <span id="books_title">Books:</span>
+        <input id="book-search" placeholder="search"/>
+      </caption>
       
       <tbody>
       <tr>
@@ -37,6 +40,7 @@
         <th>Genre</th>
         <th>Condition</th>
         <th>Quantity</th>
+        <th></th>
       </tr>
       <tr>
         <td><img class="book__img" src="./images/lord_jim.png" alt="Lord Jim book picture"></td>
@@ -46,6 +50,7 @@
         <td>Excellent</td>
         <td>Non-fiction</td>
         <td>2</td>
+        <td><button>Update</button></td>
       </tr>
       <tr >
         <td><img class="book__img" src="./images/lolita.png" alt="Lord Jim book picture"></td>
@@ -55,6 +60,7 @@
         <td>Good</td>
         <td>Fiction</td>
         <td>1</td>
+        <td><button>Update</button></td>
       </tr>
       </tbody>
     </table>
