@@ -24,6 +24,10 @@ body {
   text-align: center;
 }
 
+.delete__button {
+  border: none;
+}
+
 #login-container,
 #submission__container {
   display: flex;
@@ -80,21 +84,19 @@ form input:focus {
 
 nav {
   background-color: rgb(209, 169, 117);
-  margin-bottom: 25px;
-  padding: 5px;
+  margin: 0 0 25px 0;
+  padding: 0 0 9px 0;
   display: flex;
 
   border-radius: 5px;
 }
 
 nav .nav__links {
-  /* display: flex; */
-  /* padding: 3px; */
   flex: 1;
 }
 
 nav #signout {
-  padding: 3px;
+  /* padding: 3px; */
 }
 
 table {
@@ -104,17 +106,28 @@ table {
 table caption {
   background-color: rgb(209, 169, 117);
   border-radius: 5px;
-  font-size: xx-large;
-  font-weight: bold;
+  margin: 0 0 0 0;
+  padding: 0 0 10px 0;
 }
 
-table caption #books_title {
-  float: left;
+#table__caption {
+  display: flex;
+  margin: 0;
 }
 
-table caption #book-search {
-  float: right;
-  caption-side: bottom;
+#table__sort {
+  flex: 1;
+  margin: 0;
+}
+
+#table__filter {
+  flex: 5;
+  margin: 0;
+}
+
+#table__search {
+  flex: 1;
+  margin: 0;
 }
 
 table,

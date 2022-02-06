@@ -11,7 +11,7 @@
 
   <body>
     <div id="currentUserName"> 
-      <span>Michael</span>
+      <span>johndoe</span>
       <span id="autoLogoutTime">15 seconds remaining</span>
     </div>
     
@@ -26,11 +26,26 @@
     </nav>
     </br>
     <table id="book__table">
-      <caption >
-        <span id="books_title">Books:</span>
-        <input id="book-search" placeholder="search"/>
+      <caption>
+        <div id="table__caption">
+          <div id="table__sort"><button>Sort By</button></div>
+          <div id="table__filter"><button>Filter by Genre</button></div>
+            <!-- <div class="dropdown">
+              <button class="dropdown__button">Filter</button>
+              <div class="dropdown__content">
+                <ul>
+                  <li>Fiction</li>
+                  <li>Non-fiction</li>
+                  <li>Sci-Fi</li>
+                  <li>Mystery</li>
+                  <li>Thriller</li>
+                  <li>Romance</li>
+                </ul>
+              </div>
+            </div> -->
+          <div id="table__search"><input id="book-search" placeholder="search"/></div>
+        </div>
       </caption>
-      
       <tbody>
       <tr>
         <th></th>
@@ -50,7 +65,7 @@
         <td>Excellent</td>
         <td>Non-fiction</td>
         <td>2</td>
-        <td><button>Update</button></td>
+        <td><button>Update</button><button class="delete__button">X</button></td>
       </tr>
       <tr >
         <td><img class="book__img" src="./images/lolita.png" alt="Lord Jim book picture"></td>
@@ -60,7 +75,7 @@
         <td>Good</td>
         <td>Fiction</td>
         <td>1</td>
-        <td><button>Update</button></td>
+        <td><button>Update</button><button class="delete__button">X</button></td>
       </tr>
       </tbody>
     </table>
