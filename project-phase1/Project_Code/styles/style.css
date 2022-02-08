@@ -18,6 +18,10 @@ body {
   height: 75px;
 }
 
+.manager__container {
+  display: flex;
+}
+
 /* SELECTORS: by ID */
 
 #book__table tr {

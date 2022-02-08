@@ -22,7 +22,7 @@ login_btn.addEventListener("click", function (e) {
   } else {
     console.log("Clicked");
     // loop through array of users to match username and password
-    // window.location.href = "home.html";
+    window.location.href = "home.html";
     username.value = "";
     password.value = "";
   }
