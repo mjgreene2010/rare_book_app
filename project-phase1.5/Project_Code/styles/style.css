@@ -182,6 +182,11 @@ td {
   border-collapse: collapse;
 }
 
-tr:nth-child(even) {
+thead {
+  background-color: white;
+  height: 10px;
+}
+
+tr:nth-child(odd) {
   background-color: rgb(209, 169, 117);
 }
