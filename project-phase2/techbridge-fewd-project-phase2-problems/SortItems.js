@@ -11,12 +11,6 @@ booksArr.sort((a, b) => {
 
   if (typeof parseInt(a) === "number" && typeof parseInt(b) === "number")
     return parseInt(a) - parseInt(b);
-});
-
-booksArr.sort((a, b) => {
-  a = a.getElementsByTagName("span")[0].innerHTML;
-  b = b.getElementsByTagName("span")[0].innerHTML;
-
   typeof a === "string" && typeof b === "string" && a > b ? 1 : -1;
 });
 
@@ -29,6 +23,13 @@ btnReset.addEventListener("click", function () {
 });
 
 //working through the problem/
+
+// booksArr.sort((a, b) => {
+//   a = a.getElementsByTagName("span")[0].innerHTML;
+//   b = b.getElementsByTagName("span")[0].innerHTML;
+
+//   typeof a === "string" && typeof b === "string" && a > b ? 1 : -1;
+// });
 
 /*const btnSort = document.getElementById("btnSortIt");
 const btnReset = document.getElementById("Reset");
