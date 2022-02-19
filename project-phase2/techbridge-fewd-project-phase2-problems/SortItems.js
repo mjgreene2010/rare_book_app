@@ -3,7 +3,7 @@ const btnReset = document.getElementById("Reset");
 const bookList = document.getElementById("row0");
 const books = document.getElementsByClassName("column");
 const booksArr = [...books];
-const booksReset = [...books].slice();
+const booksReset = [...books];
 
 booksArr.sort((a, b) => {
   a = a.getElementsByTagName("span")[0].innerHTML;
@@ -17,8 +17,7 @@ booksArr.sort((a, b) => {
   a = a.getElementsByTagName("span")[0].innerHTML;
   b = b.getElementsByTagName("span")[0].innerHTML;
 
-  if (typeof a === "string" && typeof b === "string" && a > b) return 1;
-  else return -1;
+  typeof a === "string" && typeof b === "string" && a > b ? 1 : -1;
 });
 
 btnSort.addEventListener("click", function () {
