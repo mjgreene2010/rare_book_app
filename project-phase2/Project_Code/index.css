@@ -60,6 +60,7 @@ nav .nav-link {
 #book-filter,
 #book-search {
   border: none;
+  text-decoration: none;
 }
 
 .book-filter-input,
@@ -69,6 +70,7 @@ nav .nav-link {
 
 #book-list-heading {
   background-color: white;
+  border-bottom: 1px solid black;
 }
 
 .books span {
