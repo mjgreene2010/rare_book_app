@@ -28,7 +28,7 @@ btnReset.addEventListener("click", function () {
   booksReset.forEach((book) => bookList.appendChild(book));
 });
 
-//working through the problem
+//working through the problem/
 
 /*const btnSort = document.getElementById("btnSortIt");
 const btnReset = document.getElementById("Reset");
