@@ -66,6 +66,7 @@ nav .nav-link {
 .book-filter-input,
 .book-search-input {
   width: 85%;
+  margin: 0 -4px 0 0;
 }
 
 #book-list-heading {
@@ -81,9 +82,6 @@ nav .nav-link {
 
 .books span button {
   margin: 1%;
-}
-
-.filter {
 }
 
 .input-button {
