@@ -1,9 +1,18 @@
 let findInput = document.getElementById("tbNumberToFind");
-let books = document.getElementsByClassName("column");
+let books = document.querySelectorAll(".column");
 let btnFindIt = document.getElementById("btnFindIt");
 let btnReset = document.getElementById("Reset");
 
 const find = function (input) {
+  let arr = [];
+  books.forEach((book) => arr.push(book.innerText));
+
+  if (input === "") return alert("No value provide. Try again");
+  if (!arr.includes(input)) {
+    findInput.value = "";
+    return alert("Not a valid input");
+  }
+
   for (let i = 0; i < books.length; i++) {
     let book = books[i].querySelector("span");
 
