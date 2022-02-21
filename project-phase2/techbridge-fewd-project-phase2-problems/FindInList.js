@@ -8,6 +8,7 @@ console.log(books);
 const find = function (input) {
   let arr = [];
   books.forEach((book) => arr.push(book.innerText));
+
   if (input === "") return alert("No value provide. Try again");
   if (!arr.includes(input)) {
     findInput.value = "";
@@ -33,7 +34,14 @@ const reset = function () {
 };
 
 btnFindIt.addEventListener("click", (e) => {
-  find(findInput.value.toUpperCase());
+  try {
+    find(findInput.value.toUpperCase());
+  } catch (e) {
+    console.log(e);
+    if (e instanceof TypeError) {
+      alert(e.message);
+    }
+  }
 });
 
 btnReset.addEventListener("click", () => {
