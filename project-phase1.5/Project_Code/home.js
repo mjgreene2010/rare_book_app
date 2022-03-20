@@ -62,14 +62,6 @@ const inputValue = (e) => {
   e.target.value;
 };
 
-// fetch(`http://localhost:3000/books`)
-//   .then((response) => response.json())
-//   .then((data) =>
-//     data.filter((item) => {
-//       return item.title === "Lord Jim";
-//     })
-//   );
-
 const getSearchBooks = function () {
   let inputValue = document.getElementById("book-search-input").value;
 
@@ -77,7 +69,7 @@ const getSearchBooks = function () {
     .then((response) => response.json())
     .then((data) =>
       data.filter((item) => {
-        return item.title.toLowerCase() === inputValue;
+        return item.title.toLowerCase() === inputValue.toLowerCase();
       })
     )
     .then((data) => {
@@ -116,44 +108,7 @@ const getSearchBooks = function () {
         bookListing.appendChild(bookInfo);
       });
     });
-
-  //   let bookInfo = document.createElement("book-row");
-  //   bookInfo.setAttribute("class", "books");
-  //   bookInfo.setAttribute("id", "book-row");
-  //   let bookImg = document.createElement("span");
-  //   let bookTitle = document.createElement("span");
-  //   let bookAuthor = document.createElement("span");
-  //   let bookYear = document.createElement("span");
-  //   let bookGenre = document.createElement("span");
-  //   let bookCondition = document.createElement("span");
-  //   let bookCost = document.createElement("span");
-  //   let bookQuantity = document.createElement("span");
-  //   let emptyspace = document.createElement("span");
-
-  //   // bookImg.innerHTML = data[0].img;
-  //   bookTitle.innerHTML = item.title;
-  //   bookAuthor.innerHTML = item.author;
-  //   bookYear.innerHTML = item.year;
-  //   bookGenre.innerHTML = item.genre;
-  //   bookCondition.innerHTML = item.condition;
-  //   bookCost.innerHTML = `$${item.cost}`;
-  //   bookQuantity.innerHTML = item.quantity;
-  //   bookInfo.appendChild(bookImg);
-  //   bookInfo.appendChild(bookTitle);
-  //   bookInfo.appendChild(bookAuthor);
-  //   bookInfo.appendChild(bookYear);
-  //   bookInfo.appendChild(bookGenre);
-  //   bookInfo.appendChild(bookCondition);
-  //   bookInfo.appendChild(bookCost);
-  //   bookInfo.appendChild(bookQuantity);
-  //   bookInfo.appendChild(emptyspace);
-  //   bookList.appendChild(bookInfo);
-  //     );
-  //   }
-  // });
 };
-
-// console.log(bookList);
 
 window.onload = getBooks();
 
