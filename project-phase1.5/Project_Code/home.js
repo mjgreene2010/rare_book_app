@@ -69,7 +69,10 @@ const getSearchBooks = function () {
     .then((response) => response.json())
     .then((data) =>
       data.filter((item) => {
-        return item.title.toLowerCase() === inputValue.toLowerCase();
+        return (
+          item.title.toLowerCase() === inputValue.toLowerCase() ||
+          item.author.toLowerCase() === inputValue.toLowerCase()
+        );
       })
     )
     .then((data) => {
