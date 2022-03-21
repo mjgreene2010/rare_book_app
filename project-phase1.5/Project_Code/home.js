@@ -1,6 +1,6 @@
 "use strict";
 
-const bookListing = document.getElementById("book-listing");
+const bookListing = document.getElementById("book-listings");
 const filterSpan = document.querySelector(".filter");
 const bookFilter = document.getElementById("book-filter");
 const heading = document.querySelector("#book-list-heading");
@@ -76,6 +76,7 @@ const getSearchBooks = function () {
       })
     )
     .then((data) => {
+      inputValue === "" && getBooks();
       bookListing.innerHTML = "";
       [...data].forEach((item) => {
         let bookInfo = document.createElement("book-row");
@@ -146,34 +147,68 @@ const toggleSearch = () => {
 
 bookSearch.addEventListener("click", toggleSearch);
 
-// searchSpan.lastChild.remove();
-// searchSpan.setAttribute("value", "false");
+const sortBooks = (criteria) => {
+  fetch(`http://localhost:3000/books`)
+    .then((response) => response.json())
+    .then((data) =>
+      data.sort((a, b) => {
+        if (typeof a[criteria] === "string") {
+          a = a[criteria];
+          b = b[criteria];
+          console.log(a);
+          console.log(b);
+          return a > b ? 1 : -1;
+        }
 
-// let searchList = document.getElementById("book-search-input");
-// searchList.addEventListener("change", function (e) {
-//   console.log(e);
-// });
+        if (typeof a[criteria] === "number") {
+          a = a[criteria];
+          b = b[criteria];
+          console.log(a);
+          console.log(b);
+          return a - b;
+        }
+      })
+    )
+    .then((data) => {
+      bookListing.innerHTML = "";
+      [...data].forEach((item) => {
+        let bookInfo = document.createElement("book-row");
+        bookInfo.setAttribute("class", "books");
+        bookInfo.setAttribute("id", "book-row");
+        let bookImg = document.createElement("span");
+        let bookTitle = document.createElement("span");
+        let bookAuthor = document.createElement("span");
+        let bookYear = document.createElement("span");
+        let bookGenre = document.createElement("span");
+        let bookCondition = document.createElement("span");
+        let bookCost = document.createElement("span");
+        let bookQuantity = document.createElement("span");
+        let emptyspace = document.createElement("span");
 
-// bookFilter.addEventListener("click", function () {
-//   let input = document.createElement("input");
-//   let btn = document.createElement("button");
-//   let span = document.createElement("span");
+        // bookImg.innerHTML = data[0].img;
+        bookTitle.innerHTML = item.title;
+        bookAuthor.innerHTML = item.author;
+        bookYear.innerHTML = item.year;
+        bookGenre.innerHTML = item.genre;
+        bookCondition.innerHTML = item.condition;
+        bookCost.innerHTML = `$${item.cost}`;
+        bookQuantity.innerHTML = item.quantity;
+        bookInfo.appendChild(bookImg);
+        bookInfo.appendChild(bookTitle);
+        bookInfo.appendChild(bookAuthor);
+        bookInfo.appendChild(bookYear);
+        bookInfo.appendChild(bookGenre);
+        bookInfo.appendChild(bookCondition);
+        bookInfo.appendChild(bookCost);
+        bookInfo.appendChild(bookQuantity);
+        bookInfo.appendChild(emptyspace);
+        bookListing.appendChild(bookInfo);
+      });
+    });
+};
 
-//   if (filterSpan.getAttribute("value") === "false") {
-//     input.classList = "book-filter-input";
-//     input.setAttribute("type", "text");
-//     btn.innerHTML = "Enter";
-//     btn.classList = "submit-filter";
-//     btn.setAttribute("type", "submit");
-//     span.appendChild(input);
-//     span.appendChild(btn);
-//     span.classList = "input-button";
-//     filterSpan.appendChild(span);
-//     filterSpan.setAttribute("value", "true");
-
-//     console.log(e.target.value);
-//   } else if (filterSpan.getAttribute("value") === "true") {
-//     filterSpan.lastChild.remove();
-//     filterSpan.setAttribute("value", "false");
-//   }
-// });
+document.querySelectorAll("#sort-buttons").forEach((item) => {
+  item.addEventListener("click", (e) =>
+    sortBooks(e.target.innerHTML.trim().toLowerCase())
+  );
+});
