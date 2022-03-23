@@ -11,6 +11,7 @@ const getBooks = function () {
   fetch(`http://localhost:3000/books`)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       data.forEach((item) => {
         let bookInfo = document.createElement("book-row");
         bookInfo.setAttribute("class", "books");
@@ -155,16 +156,12 @@ const sortBooks = (criteria) => {
         if (typeof a[criteria] === "string") {
           a = a[criteria];
           b = b[criteria];
-          console.log(a);
-          console.log(b);
           return a > b ? 1 : -1;
         }
 
         if (typeof a[criteria] === "number") {
           a = a[criteria];
           b = b[criteria];
-          console.log(a);
-          console.log(b);
           return a - b;
         }
       })
