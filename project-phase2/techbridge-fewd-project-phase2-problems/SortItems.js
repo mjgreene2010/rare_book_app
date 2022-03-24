@@ -1,26 +1,79 @@
 const btnSort = document.getElementById("btnSortIt");
 const btnReset = document.getElementById("Reset");
-const bookList = document.getElementById("row0");
+const arr = document.querySelector("#row0");
+const you = document.getElementById("row0").children;
 const books = document.getElementsByClassName("column");
+const results = document.getElementById("resultsRow");
 const booksArr = [...books];
 const booksReset = [...books];
 
-booksArr.sort((a, b) => {
-  a = a.getElementsByTagName("span")[0].innerHTML;
-  b = b.getElementsByTagName("span")[0].innerHTML;
+function sortIt() {
+  console.log(you);
+  let newT = [];
+  for (let t = 0; t < you.length; t++) {
+    console.log(you[t].innerText);
+    newT.push(you[t].innerText);
+    newT.sort();
+  }
+  console.log(newT);
+  let gone = [];
+  for (let t = 0; t < you.length; t++) {
+    for (let v = 0; v < newT.length; v++) {
+      if (newT[t] == you[v].innerText) {
+        console.log(gone[v]);
 
-  if (typeof parseInt(a) === "number" && typeof parseInt(b) === "number")
-    return parseInt(a) - parseInt(b);
-  typeof a === "string" && typeof b === "string" && a > b ? 1 : -1;
-});
+        gone.push(you[v]);
+      }
+    }
+  }
 
-btnSort.addEventListener("click", function () {
-  booksArr.forEach((book) => bookList.appendChild(book));
-});
+  let a = [1, 2, 3, 4, 5];
+  let b = [4, 5, 2, 1, 3];
 
-btnReset.addEventListener("click", function () {
-  booksReset.forEach((book) => bookList.appendChild(book));
-});
+  for (let i = 0; i < a.length; i++) {
+    for (let j = 0; j < b.length; j++) {
+      if (a[i] == b[j]) {
+        // gone.push(you[v]);
+      }
+    }
+  }
+
+  1 === 4;
+  1 === 5;
+  1 === 2;
+  1 === 1;
+
+  2 === 4;
+  2 === 5;
+  2 === 2;
+
+  3 === 4;
+
+  for (let i = 0; i < gone.length; i++) {
+    results.appendChild(gone[i]);
+  }
+
+  // return arr.appendChild(gone);
+}
+
+sortIt();
+
+// booksArr.sort((a, b) => {
+//   a = a.getElementsByTagName("span")[0].innerHTML;
+//   b = b.getElementsByTagName("span")[0].innerHTML;
+
+//   if (typeof parseInt(a) === "number" && typeof parseInt(b) === "number")
+//     return parseInt(a) - parseInt(b);
+//   typeof a === "string" && typeof b === "string" && a > b ? 1 : -1;
+// });
+
+// btnSort.addEventListener("click", function () {
+//   booksArr.forEach((book) => bookList.appendChild(book));
+// });
+
+// btnReset.addEventListener("click", function () {
+//   booksReset.forEach((book) => bookList.appendChild(book));
+// });
 
 //working through the problem/
 
